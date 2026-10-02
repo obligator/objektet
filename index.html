@@ -181,6 +181,12 @@
   .sources .ref-meta { font-size: .8rem; color: var(--muted); letter-spacing: .03em; }
   .sources .ref-quote { grid-column: 2; font-size: .95rem; }
   .sources .ref-quote em { color: var(--muted); }
+  .apocrypha { margin-top: 36px; }
+  .apocrypha summary { cursor: pointer; text-align: center; list-style: none; font-size: .8rem; letter-spacing: .2em; text-transform: uppercase; color: var(--gold); border: 1px solid var(--gold); padding: 14px; }
+  .apocrypha summary::-webkit-details-marker { display: none; }
+  .apocrypha[open] summary { margin-bottom: 20px; }
+  .group { font-family: var(--serif); font-weight: 500; font-size: 1.5rem; text-align: center; margin: 44px 0 4px; }
+  .sources .gloss { display: block; margin-top: 8px; font-family: var(--serif); font-style: italic; font-size: 1.1rem; color: var(--gold); }
   .note { text-align: center; font-family: var(--serif); font-style: italic; font-size: 1.2rem; color: var(--muted); margin-top: 48px; }
 
   /* Modal */
@@ -503,80 +509,139 @@
 <section id="kallor">
   <div class="wrap">
     <div class="divider">✦ ✦ ✦</div>
-    <h2>Den profana litteraturen</h2>
-    <p class="sub">Lag, myndigheter och forskning som Objektet i sin visdom har valt att inte läsa. Återges här utan omskrivning.</p>
-    <ol class="sources">
-      <li>
-        <div>
-          <div class="ref-title"><a href="https://www.riksdagen.se/sv/dokument-och-lagar/dokument/svensk-forfattningssamling/lag-20181197-om-forenta-nationernas-konvention_sfs-2018-1197/" target="_blank" rel="noopener">Lag (2018:1197) om Förenta nationernas konvention om barnets rättigheter</a></div>
-          <div class="ref-meta">Svensk lag sedan 1 januari 2020</div>
-        </div>
-        <div class="ref-quote">Artikel 3: Vid alla åtgärder som rör barn ska <em>barnets bästa</em> komma i främsta rummet. Artikel 17: Staten ska verka för riktlinjer som skyddar barnet mot information och material som är <em>till skada för dess välfärd</em>.</div>
-      </li>
-      <li>
-        <div>
-          <div class="ref-title"><a href="https://www.riksdagen.se/sv/dokument-och-lagar/dokument/svensk-forfattningssamling/skollag-2010800_sfs-2010-800/" target="_blank" rel="noopener">Skollag (2010:800), 5 kap. 3 §</a></div>
-          <div class="ref-meta">Riksdagen</div>
-        </div>
-        <div class="ref-quote">Utbildningen ska utformas så att alla elever tillförsäkras en skolmiljö som präglas av <em>trygghet och studiero</em>.</div>
-      </li>
-      <li>
-        <div>
-          <div class="ref-title"><a href="https://www.folkhalsomyndigheten.se/livsvillkor-levnadsvanor/digitala-medier-och-halsa/rekommendationer-om-skarmanvandning-for-olika-aldrar/" target="_blank" rel="noopener">Rekommendationer om skärmanvändning för olika åldrar</a> · <a href="https://www.folkhalsomyndigheten.se/contentassets/201463a976054dde8ad7aa8a47861c0a/rekommendationer-digitala-medier-barns-ungas-medieanvandning.pdf" target="_blank" rel="noopener">PDF</a></div>
-          <div class="ref-meta">Folkhälsomyndigheten, 2 september 2024</div>
-        </div>
-        <div class="ref-quote">Fritidsskärmtid högst 1–2 timmar per dag för 6–12 år och 2–3 timmar för 13–18 år. Inga skärmar före läggdags. Skärmarna ska stanna <em>utanför sovrummet på natten</em>.</div>
-      </li>
-      <li>
-        <div>
-          <div class="ref-title"><a href="https://www.regeringen.se/contentassets/d818e658071b49cbb1a75a6b11fa725d/karolinskainstitutet.pdf" target="_blank" rel="noopener">Yttrande över förslag till nationell digitaliseringsstrategi för skolväsendet 2023–2027</a></div>
-          <div class="ref-meta">Karolinska Institutet, 2023 (dnr 1-322/2023, U2022/03951)</div>
-        </div>
-        <div class="ref-quote">Karolinska Institutet konstaterar att det saknas vetenskapligt stöd för de positiva effekter av digitalisering som påstås. Forskningen visar tvärtom på <em>betydande negativa konsekvenser för elevernas kunskapsinhämtning</em>.</div>
-      </li>
-      <li>
-        <div>
-          <div class="ref-title"><a href="https://www.unesco.org/en/articles/global-education-monitoring-report-2023-technology-education-tool-whose-terms" target="_blank" rel="noopener">Global Education Monitoring Report 2023: Technology in education – A tool on whose terms?</a></div>
-          <div class="ref-meta">UNESCO, 2023</div>
-        </div>
-        <div class="ref-quote">Teknik ska införas i undervisningen när det finns belägg för att den är lämplig, likvärdig, skalbar och hållbar, alltså <em>i elevernas bästa intresse</em>. Rapporten pekar ut bristande styrning och reglering.</div>
-      </li>
-      <li>
-        <div>
-          <div class="ref-title"><a href="https://www.oecd.org/en/publications/pisa-2022-results-volume-ii_a97db61c-en/full-report/component-10.html" target="_blank" rel="noopener">PISA 2022 Results (Volume II): Learning During – and From – Disruption</a></div>
-          <div class="ref-meta">OECD, 2023</div>
-        </div>
-        <div class="ref-quote">Elever som störs av klasskamraters digitala enheter på åtminstone en del mattelektioner presterar <em>15 poäng lägre</em> i matematik än elever som sällan eller aldrig störs, efter justering för socioekonomisk bakgrund.</div>
-      </li>
-      <li>
-        <div>
-          <div class="ref-title"><a href="https://www.oecd.org/en/publications/education-in-sweden_9bbbb63d-en/full-report/digital-education-in-sweden-insights-from-pisa-2022-and-implications-for-student-learning_5c18f1d7.html" target="_blank" rel="noopener">Digital education in Sweden: Insights from PISA 2022 and implications for student learning</a></div>
-          <div class="ref-meta">OECD, Education in Sweden</div>
-        </div>
-        <div class="ref-quote">OECD:s genomgång av hur digitala verktyg används i den svenska skolan, och vad det betyder för elevernas lärande.</div>
-      </li>
-      <li>
-        <div>
-          <div class="ref-title"><a href="https://www.oecd.org/content/dam/oecd/en/publications/reports/2024/05/managing-screen-time_023f2390/7c225af4-en.pdf" target="_blank" rel="noopener">Managing screen time: How to protect and equip students against distraction</a></div>
-          <div class="ref-meta">OECD, PISA in Focus, maj 2024</div>
-        </div>
-        <div class="ref-quote">OECD om hur skolor kan skydda eleverna mot digital distraktion och samtidigt lära dem att hantera den.</div>
-      </li>
-      <li>
-        <div>
-          <div class="ref-title"><a href="https://www.vilarare.se/nyheter/arbetsmiljo/regeringen-mobilforbud-i-grundskolan-i-host/" target="_blank" rel="noopener">Mobilfri skola: lagändring från 1 augusti 2026</a></div>
-          <div class="ref-meta">Regeringens lagrådsremiss, rapporterad av Vi Lärare 28 januari 2026</div>
-        </div>
-        <div class="ref-quote">Mobiltelefoner samlas in under hela skoldagen i grundskolan och fritidshemmet. Syftet är studiero och elevernas psykiska hälsa. <em>Under samma skoldag har varje elev en olåst dator med fri tillgång till internet.</em></div>
-      </li>
-      <li>
-        <div>
-          <div class="ref-title"><a href="https://support.google.com/chrome/a/answer/1375678?hl=sv" target="_blank" rel="noopener">Ange enhetspolicyer för ChromeOS</a> · <a href="https://knowledge.workspace.google.com/admin/youtube/control-youtube-content-available-to-users" target="_blank" rel="noopener">Styra YouTube-innehåll</a> · <a href="https://chromeenterprise.google/policies/force-you-tube-restrict/" target="_blank" rel="noopener">ForceYouTubeRestrict</a></div>
-          <div class="ref-meta">Google, Chrome Enterprise and Education Help</div>
-        </div>
-        <div class="ref-quote">Tillverkarens egen dokumentation om hur allt under <em>Församlingens böneämnen</em> ställs in. Uppskattad tidsåtgång: en eftermiddag. Uppskattad handläggningstid i Objektet: okänd.</div>
-      </li>
-    </ol>
+    <h2>Apokryferna</h2>
+    <p class="sub">Kätterska skrifter som Objektet inte erkänner. De är skrivna av forskare, myndigheter och lagstiftare, alltså människor som aldrig suttit i rätt instans.</p>
+    <div class="prose">
+      <p>Under åren har en liten sekt av villolärare samlat sina skrifter. De har undersökt vad som händer när barn får en dator med sig hem utan regler. Deras slutsatser är så hädiska att de återges här ordagrant och med fullständiga källhänvisningar, så att den troende själv kan undvika dem.</p>
+    </div>
+    <details class="apocrypha">
+      <summary>Öppna de förbjudna skrifterna</summary>
+
+      <h3 class="group">Om datorerna som sändes hem</h3>
+      <ol class="sources">
+        <li>
+          <div>
+            <div class="ref-title"><a href="https://doi.org/10.1093/qje/qjr008" target="_blank" rel="noopener">Home Computer Use and the Development of Human Capital</a></div>
+            <div class="ref-meta">Malamud &amp; Pop-Eleches · <em>Quarterly Journal of Economics</em> 126(2), 2011</div>
+          </div>
+          <div class="ref-quote">Barn som fick en dator hem fick <em>signifikant lägre skolbetyg</em>. Där föräldrarna satte regler för läxor och datoranvändning dämpades effekten. <span class="gloss">Regler hjälpte alltså. Objektet har noterat detta och valt att inte ha några.</span></div>
+        </li>
+        <li>
+          <div>
+            <div class="ref-title"><a href="https://doi.org/10.1111/ecin.12089" target="_blank" rel="noopener">Scaling the Digital Divide: Home Computer Technology and Student Achievement</a></div>
+            <div class="ref-meta">Vigdor, Ladd &amp; Martinez · <em>Economic Inquiry</em> 52(3), 2014</div>
+          </div>
+          <div class="ref-quote">Tillgång till dator och bredband i hemmet gav <em>lägre provresultat i matematik och läsning</em> och vidgade klyftorna mellan elevgrupper. Mest drabbades elever med sämre socioekonomiska förutsättningar.</div>
+        </li>
+        <li>
+          <div>
+            <div class="ref-title"><a href="https://doi.org/10.1257/app.5.3.211" target="_blank" rel="noopener">Experimental Evidence on the Effects of Home Computers on Academic Achievement among Schoolchildren</a></div>
+            <div class="ref-meta">Fairlie &amp; Robinson · <em>American Economic Journal: Applied Economics</em> 5(3), 2013</div>
+          </div>
+          <div class="ref-quote">Det största randomiserade fältexperimentet med gratis hemdatorer. Resultat: <em>ingen effekt</em> på betyg, provresultat, närvaro eller disciplin. <span class="gloss">Datorerna gjorde alltså exakt lika mycket nytta som Objektet.</span></div>
+        </li>
+        <li>
+          <div>
+            <div class="ref-title"><a href="https://doi.org/10.1016/j.labeco.2020.101957" target="_blank" rel="noopener">A laptop for every child? The impact of technology on human capital formation</a></div>
+            <div class="ref-meta">Hall, Lundin &amp; Sibbmark · <em>Labour Economics</em> 69, 2021 · IFAU, Uppsala</div>
+          </div>
+          <div class="ref-quote">Svensk forskning om svenska 1:1-satsningar. <em>Ingen genomsnittlig effekt</em> på provresultat. För elever med lågutbildade föräldrar blev matematiken sämre, och färre gick vidare till högskoleförberedande program. <span class="gloss">Skrifterna är dessutom författade på hemmaplan. Objektet läser inte svenska.</span></div>
+        </li>
+        <li>
+          <div>
+            <div class="ref-title"><a href="https://www.sciencedirect.com/science/article/pii/S027277572400030X" target="_blank" rel="noopener">Technology in the classroom: Personal computers and learning outcomes in primary school</a></div>
+            <div class="ref-meta">Hall &amp; Lundin · <em>Economics of Education Review</em> 100, 2024</div>
+          </div>
+          <div class="ref-quote">Svenska elever i årskurs 6. <em>Inga betydande effekter</em> på det genomsnittliga lärandet. Små positiva effekter fanns bara bland elever med högutbildade föräldrar. <span class="gloss">Datorerna hjälper alltså de barn som redan har det bäst. Likvärdighet, i Objektets tolkning.</span></div>
+        </li>
+      </ol>
+
+      <h3 class="group">Om nattens frid</h3>
+      <ol class="sources">
+        <li>
+          <div>
+            <div class="ref-title"><a href="https://doi.org/10.1001/jamapediatrics.2016.2341" target="_blank" rel="noopener">Association Between Portable Screen-Based Media Device Access or Use and Sleep Outcomes</a></div>
+            <div class="ref-meta">Carter m.fl. · <em>JAMA Pediatrics</em> 170(12), 2016 · metaanalys, 20 studier, 125 198 barn</div>
+          </div>
+          <div class="ref-quote">Barn som använder skärm före läggdags löper ungefär dubbelt så hög risk att sova för lite. Det räcker att enheten <em>finns i sovrummet</em>, även oanvänd, för att sömnen ska bli kortare och sämre och barnet tröttare under dagen. <span class="gloss">Datorn behöver inte ens vara på. Det räcker att Objektet har skickat hem den.</span></div>
+        </li>
+        <li>
+          <div>
+            <div class="ref-title"><a href="https://www.folkhalsomyndigheten.se/livsvillkor-levnadsvanor/digitala-medier-och-halsa/rekommendationer-om-skarmanvandning-for-olika-aldrar/" target="_blank" rel="noopener">Rekommendationer om skärmanvändning för olika åldrar</a></div>
+            <div class="ref-meta">Folkhälsomyndigheten, september 2024</div>
+          </div>
+          <div class="ref-quote">Fritidsskärmtid högst 1–2 timmar per dag för 6–12 år och 2–3 timmar för 13–18 år. Inga skärmar före läggdags. Skärmar ska vara <em>utanför sovrummet på natten</em>.</div>
+        </li>
+      </ol>
+
+      <h3 class="group">Om läsning och lärande</h3>
+      <ol class="sources">
+        <li>
+          <div>
+            <div class="ref-title"><a href="https://doi.org/10.1016/j.edurev.2018.09.003" target="_blank" rel="noopener">Don’t throw away your printed books: A meta-analysis on the effects of reading media on reading comprehension</a></div>
+            <div class="ref-meta">Delgado m.fl. · <em>Educational Research Review</em> 25, 2018 · 54 studier, över 170 000 deltagare</div>
+          </div>
+          <div class="ref-quote">Läsförståelsen är bättre på papper än på skärm för sakprosa, alltså <em>just den typ av text som skolan använder</em>.</div>
+        </li>
+        <li>
+          <div>
+            <div class="ref-title"><a href="https://doi.org/10.3102/0034654321998074" target="_blank" rel="noopener">A Comparison of Children’s Reading on Paper Versus Screen: A Meta-Analysis</a></div>
+            <div class="ref-meta">Furenes, Kucirkova &amp; Bus · <em>Review of Educational Research</em> 91(4), 2021</div>
+          </div>
+          <div class="ref-quote">Barn förstår texten bättre när de läser på papper än på skärm.</div>
+        </li>
+        <li>
+          <div>
+            <div class="ref-title"><a href="https://www.oecd.org/en/publications/pisa-2022-results-volume-ii_a97db61c-en.html" target="_blank" rel="noopener">PISA 2022 Results (Volume II)</a> · <a href="https://www.oecd.org/content/dam/oecd/en/publications/reports/2024/05/managing-screen-time_023f2390/7c225af4-en.pdf" target="_blank" rel="noopener">Managing screen time</a></div>
+            <div class="ref-meta">OECD, 2023 och 2024</div>
+          </div>
+          <div class="ref-quote">Elever som störs av andras digitala enheter på lektionerna får <em>15 poäng lägre</em> i matematik, efter justering för socioekonomisk bakgrund.</div>
+        </li>
+        <li>
+          <div>
+            <div class="ref-title"><a href="https://www.regeringen.se/contentassets/d818e658071b49cbb1a75a6b11fa725d/karolinskainstitutet.pdf" target="_blank" rel="noopener">Yttrande över förslag till nationell digitaliseringsstrategi för skolväsendet 2023–2027</a></div>
+            <div class="ref-meta">Karolinska Institutet, 2023 (dnr 1-322/2023)</div>
+          </div>
+          <div class="ref-quote">Påstådda positiva effekter av digitaliseringen saknar vetenskapligt stöd. Forskningen pekar i stället på <em>betydande negativa konsekvenser för kunskapsinhämtningen</em>. <span class="gloss">Remissvaret har tagits emot och lyfts till Objektet.</span></div>
+        </li>
+        <li>
+          <div>
+            <div class="ref-title"><a href="https://www.unesco.org/en/articles/global-education-monitoring-report-2023-technology-education-tool-whose-terms" target="_blank" rel="noopener">Technology in education: A tool on whose terms?</a></div>
+            <div class="ref-meta">UNESCO, Global Education Monitoring Report 2023</div>
+          </div>
+          <div class="ref-quote">Teknik ska bara användas där det finns belägg för att den hjälper, och <em>på elevernas villkor</em>. Rapporten pekar ut bristande styrning och reglering.</div>
+        </li>
+      </ol>
+
+      <h3 class="group">Lag och förordning</h3>
+      <ol class="sources">
+        <li>
+          <div>
+            <div class="ref-title"><a href="https://www.riksdagen.se/sv/dokument-och-lagar/dokument/svensk-forfattningssamling/lag-20181197-om-forenta-nationernas-konvention_sfs-2018-1197/" target="_blank" rel="noopener">Lag (2018:1197) om FN:s konvention om barnets rättigheter</a></div>
+            <div class="ref-meta">Svensk lag sedan 2020</div>
+          </div>
+          <div class="ref-quote">Art. 3: Vid alla åtgärder som rör barn ska <em>barnets bästa</em> komma i främsta rummet. Art. 17: Barnet ska skyddas mot material som skadar dess välfärd. <span class="gloss">Objektet står dock över lagen, som bekant.</span></div>
+        </li>
+        <li>
+          <div>
+            <div class="ref-title"><a href="https://www.riksdagen.se/sv/dokument-och-lagar/dokument/svensk-forfattningssamling/skollag-2010800_sfs-2010-800/" target="_blank" rel="noopener">Skollag (2010:800), 5 kap. 3 §</a></div>
+            <div class="ref-meta">Riksdagen</div>
+          </div>
+          <div class="ref-quote">Alla elever ska tillförsäkras en skolmiljö som präglas av <em>trygghet och studiero</em>.</div>
+        </li>
+      </ol>
+
+      <h3 class="group">Tillverkarens egen bruksanvisning</h3>
+      <ol class="sources">
+        <li>
+          <div>
+            <div class="ref-title"><a href="https://support.google.com/chrome/a/answer/1375678?hl=sv" target="_blank" rel="noopener">Ange enhetspolicyer för ChromeOS</a> · <a href="https://knowledge.workspace.google.com/admin/youtube/control-youtube-content-available-to-users" target="_blank" rel="noopener">Styra YouTube-innehåll</a> · <a href="https://chromeenterprise.google/policies/force-you-tube-restrict/" target="_blank" rel="noopener">ForceYouTubeRestrict</a></div>
+            <div class="ref-meta">Google, Chrome Enterprise and Education Help</div>
+          </div>
+          <div class="ref-quote">Här beskriver Google hur allt under <em>Församlingens böneämnen</em> ställs in. Uppskattad tid: en eftermiddag. Uppskattad handläggningstid i Objektet: okänd.</div>
+        </li>
+      </ol>
+    </details>
     <p class="note">”Ty Objektet har icke beretts av forskningen, utan forskningen skall beredas av Objektet.”</p>
   </div>
 </section>
