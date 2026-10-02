@@ -166,13 +166,30 @@
   .petition { background: #fff; border: 1px solid var(--line); padding: 30px 28px; }
   .petition h3 { font-family: var(--serif); font-weight: 500; font-size: 1.45rem; margin-bottom: 8px; }
   .petition > p { color: var(--muted); font-size: .95rem; margin-bottom: 14px; }
-  .petition ul { list-style: none; border-top: 1px solid var(--line); }
-  .petition li { padding: 9px 0; border-bottom: 1px solid var(--line); font-size: .88rem; }
-  .petition code { font-size: .8rem; color: var(--gold); background: var(--bg-alt); padding: 1px 5px; }
   .status { display: inline-block; margin-top: 16px; font-size: .7rem; letter-spacing: .18em; text-transform: uppercase; color: var(--gold); border: 1px solid var(--gold-soft); padding: 4px 10px; }
 
   /* Källor */
-  .sources { list-style: none; counter-reset: s; }
+  .sources { list-style: none; }
+  .sources li { scroll-margin-top: 80px; }
+  .fn { font-family: var(--sans); font-size: .62em; vertical-align: super; line-height: 0; color: var(--gold); text-decoration: none; margin-left: 2px; }
+  .fn + .fn::before { content: ","; margin-right: 1px; }
+  .prophets { font-size: .8rem; color: var(--muted); margin-top: 14px; }
+  .prophets a { color: var(--gold); text-decoration: none; }
+  .note a { color: var(--gold); }
+
+  /* Profeterna */
+  .prophecies { border-top: 1px solid var(--line); }
+  .prophecy { display: grid; grid-template-columns: 1fr 1fr; border-bottom: 1px solid var(--line); }
+  .prophecy > div { padding: 18px 24px; }
+  .prophecy .says { font-family: var(--serif); font-size: 1.2rem; line-height: 1.45; }
+  .prophecy .answer { font-family: var(--serif); font-style: italic; font-size: 1.2rem; color: var(--muted); border-left: 1px solid var(--line); }
+  .prophecy.head div { font-size: .72rem; letter-spacing: .2em; text-transform: uppercase; color: var(--gold); padding-top: 14px; padding-bottom: 14px; }
+  @media (max-width: 640px) {
+    .prophecy { grid-template-columns: 1fr; }
+    .prophecy .answer { border-left: 0; padding-top: 0; }
+    .prophecy .answer::before { content: "Objektet: "; font-style: normal; color: var(--gold); }
+    .prophecy.head { display: none; }
+  }
   .sources li { counter-increment: s; display: grid; grid-template-columns: 40px 1fr; gap: 6px 14px; padding: 22px 0; border-bottom: 1px solid var(--line); }
   .sources li::before { content: "[" counter(s) "]"; font-family: var(--serif); color: var(--gold); font-size: 1.1rem; }
   .sources .ref-title { font-family: var(--serif); font-size: 1.2rem; font-weight: 500; line-height: 1.35; }
@@ -181,7 +198,7 @@
   .sources .ref-meta { font-size: .8rem; color: var(--muted); letter-spacing: .03em; }
   .sources .ref-quote { grid-column: 2; font-size: .95rem; }
   .sources .ref-quote em { color: var(--muted); }
-  .apocrypha { margin-top: 36px; }
+  .apocrypha { margin-top: 36px; counter-reset: s; }
   .apocrypha summary { cursor: pointer; text-align: center; list-style: none; font-size: .8rem; letter-spacing: .2em; text-transform: uppercase; color: var(--gold); border: 1px solid var(--gold); padding: 14px; }
   .apocrypha summary::-webkit-details-marker { display: none; }
   .apocrypha[open] summary { margin-bottom: 20px; }
@@ -219,6 +236,7 @@
     <ul class="nav-links">
       <li><a href="#vittnesbord">Vittnesbörd</a></li>
       <li><a href="#skrifterna">Skrifterna</a></li>
+      <li><a href="#profeterna">Profeterna</a></li>
       <li><a href="#budorden">Budorden</a></li>
       <li><a href="#boneamnen">Böneämnen</a></li>
       <li><a href="#butik">Butik</a></li>
@@ -257,12 +275,12 @@
     <h2>Mitt vittnesbörd</h2>
     <p class="sub">Om hur en vilsen IT-samordnare till slut fann vägen</p>
     <div class="prose">
-      <p class="drop">I många år vandrade jag i mörker. Jag trodde, i min stora enfald, att när elever, föräldrar, lärare, rektorer, skolpsykologer och kuratorer – alla, utan undantag – säger samma sak, så borde någon göra något. Jag trodde att barnens bästa var en riktning. Jag trodde att ett problem som syns i varje klassrum varje dag var ett problem.</p>
-      <p>Varje gång jag lyfte en fråga fick jag samma svar: <em>”Det ska tas upp i Objektet.”</em> Och jag frågade, i mitt högmod: <em>Vad är Objektet? Vem sitter i det? När möts det? Vad har det beslutat?</em></p>
-      <p>Ingen kunde svara. Ingen hade sett det. Ingen visste var det fanns. Men alla var helt övertygade om att det var där frågan hörde hemma.</p>
-      <p>Och då, en grå tisdag i ett mötesrum utan fönster, föll fjällen från mina ögon. Något som ingen har sett, som ingen kan beskriva, som aldrig frågar, aldrig lyssnar, aldrig svarar – och som ändå styr allting? Något som står över elever, föräldrar, lärare, forskning och sunt förnuft?</p>
+      <p class="drop">I många år vandrade jag i mörker. Jag trodde, i min stora enfald, att när elever, föräldrar, lärare, rektorer, specialpedagoger, skolsköterskor, skolpsykologer, kuratorer, skattebetalarna som betalar alltihop, Folkhälsomyndigheten,<a class="fn" href="#k7">7</a> Karolinska Institutet,<a class="fn" href="#k11">11</a> UNESCO<a class="fn" href="#k12">12</a> och till och med regeringen – alla, utan undantag – säger samma sak, så borde någon göra något. Jag trodde att barnens bästa var en riktning.<a class="fn" href="#k13">13</a> Jag trodde att forskning var något man läste <em>innan</em> man bestämde sig. Jag trodde att ett problem som syns i varje klassrum varje dag var ett problem.</p>
+      <p>Varje gång jag lyfte en fråga fick jag samma svar: <em>”Det ska tas upp i Objektet.”</em> Så jag lyfte den dit. Och lyfte den igen. Och väntade, i mitt högmod, på att något skulle komma tillbaka. Jag trodde att en fråga som skickas någonstans också kommer fram någonstans.</p>
+      <p>Ingenting kom tillbaka. Ingenting kommer någonsin tillbaka. Men alla var helt övertygade om att det var där frågan hörde hemma – och att den, från det ögonblick den låg där, inte längre var någons.</p>
+      <p>Och då, en grå tisdag i ett mötesrum utan fönster, föll fjällen från mina ögon. Något dit alla frågor färdas och varifrån ingen återvänder. Något som aldrig frågar, aldrig lyssnar, aldrig svarar – och som ändå står över elever, föräldrar, lärare, forskning och sunt förnuft?</p>
       <p><strong>Det är ju Gud.</strong></p>
-      <p>Jag bad om förlåtelse för alla gånger jag försökt <em>lösa</em> saker. Jag förstår nu att det inte är vår uppgift att förstå Objektets vägar. Vår uppgift är att lyfta. Att hänvisa. Att ha ryggen fri. Resten vilar i Objektets händer – där det har vilat i flera år, och där det, om Objektet vill, skall vila i evighet.</p>
+      <p>Jag bad om förlåtelse för alla gånger jag citerat <a href="#profeterna">forskningen</a>, som om den vore ett argument. För alla gånger jag försökt <em>lösa</em> saker. Jag förstår nu att det inte är vår uppgift att förstå Objektets vägar. Vår uppgift är att lyfta. Att hänvisa. Att ha ryggen fri. Resten vilar i Objektets händer – där det har vilat i flera år, och där det, om Objektet vill, skall vila i evighet.</p>
       <p class="signature">– En omvänd syndare</p>
     </div>
   </div>
@@ -324,11 +342,48 @@
         <blockquote>I blinda ledare, som silen bort myggen men sväljen kamelen!</blockquote>
         <cite>Matteus 23:24 – det enda ord i Skrifterna som inte behövde ändras</cite>
       </div>
+      <div class="verse">
+        <blockquote>Se, jag sänder eder profeter och vise och skriftlärde. Somliga av dem skolen I bordlägga, och somliga skolen I hänvisa från instans till instans.</blockquote>
+        <cite>Matteus 23:34</cite>
+      </div>
+      <div class="verse">
+        <blockquote>Objektet, jag tackar dig att jag icke är såsom andra människor – forskare, barnläkare, föräldrar – eller ens såsom denne skolkurator. Jag lyfter två gånger i veckan och hänvisar allt jag har.</blockquote>
+        <cite>Lukas 18:11–12</cite>
+      </div>
     </div>
   </div>
 </section>
 
-<section class="alt" id="budorden">
+<section class="alt" id="profeterna">
+  <div class="wrap-wide">
+    <div class="divider">✦ ✦ ✦</div>
+    <h2>Profeterna och Objektet</h2>
+    <p class="sub">Profeterna har talat. Objektet har tagit emot.</p>
+    <div class="prophecies">
+      <div class="prophecy head"><div>Profeterna säger</div><div>Objektet svarar</div></div>
+      <div class="prophecy"><div class="says">Barn som fick en dator med sig hem fick lägre betyg. Där föräldrarna satte regler blev skadan mindre.<a class="fn" href="#k1">1</a></div><div class="answer">Regler är ett föräldraansvar.</div></div>
+      <div class="prophecy"><div class="says">Dator och bredband i hemmet gav lägre resultat i matematik och läsning, och större klyftor.<a class="fn" href="#k2">2</a></div><div class="answer">Vi är en digital kommun.</div></div>
+      <div class="prophecy"><div class="says">Gratis hemdatorer i det största experimentet hittills: ingen effekt alls på betyg, prov eller närvaro.<a class="fn" href="#k3">3</a></div><div class="answer">Då kan de ju inte heller skada.</div></div>
+      <div class="prophecy"><div class="says">Svenska 1:1-satsningar: ingen genomsnittlig effekt. Sämre matematik för elever med lågutbildade föräldrar.<a class="fn" href="#k4">4</a><a class="fn" href="#k5">5</a></div><div class="answer">Satsningen ska utvärderas.</div></div>
+      <div class="prophecy"><div class="says">En skärm i sovrummet ger kortare och sämre sömn – även när den inte används.<a class="fn" href="#k6">6</a></div><div class="answer">Datorn är elevens arbetsverktyg.</div></div>
+      <div class="prophecy"><div class="says">Skärmar ska vara utanför sovrummet på natten.<a class="fn" href="#k7">7</a></div><div class="answer">Det får tas upp i Objektet.</div></div>
+      <div class="prophecy"><div class="says">Läsförståelsen är bättre på papper än på skärm.<a class="fn" href="#k8">8</a><a class="fn" href="#k9">9</a></div><div class="answer">Läroböcker är en kostnadsfråga.</div></div>
+      <div class="prophecy"><div class="says">Andras skärmar på lektionen kostar 15 poäng i matematik.<a class="fn" href="#k10">10</a></div><div class="answer">Det är en fråga för klassrumsledarskapet.</div></div>
+      <div class="prophecy"><div class="says">Påstådda positiva effekter av skolans digitalisering saknar vetenskapligt stöd.<a class="fn" href="#k11">11</a></div><div class="answer">Remissvaret har lyfts.</div></div>
+      <div class="prophecy"><div class="says">Teknik bara där den bevisligen hjälper – med styrning och reglering.<a class="fn" href="#k12">12</a></div><div class="answer">Vi avvaktar nationella riktlinjer.</div></div>
+      <div class="prophecy"><div class="says">Filter och spärrar räcker inte. Eleverna hittar vägar runt, och de flesta lärare vet inte vilka filter som finns.<a class="fn" href="#k15">15</a></div><div class="answer">Då är det ingen idé att ha några.</div></div>
+      <div class="prophecy"><div class="says">Skolans datorer ska filtreras även när de är hemma, och filtret ska ses över varje år av utsedda ansvariga.<a class="fn" href="#k17">17</a><a class="fn" href="#k18">18</a></div><div class="answer">Det är inte vårt mandat.</div></div>
+      <div class="prophecy"><div class="says">Filter räcker aldrig ensamma. Barnen behöver också undervisning om nätet.<a class="fn" href="#k19">19</a><a class="fn" href="#k20">20</a></div><div class="answer">Då väntar vi med båda.</div></div>
+      <div class="prophecy"><div class="says">En kommun som gav eleverna Google utan att bedöma riskerna fick betala 300 000 kronor.<a class="fn" href="#k21">21</a></div><div class="answer">Det var en annan kommun.</div></div>
+      <div class="prophecy"><div class="says">53 danska kommuner beordrades att sluta låta elevernas uppgifter användas för Googles egna syften.<a class="fn" href="#k22">22</a></div><div class="answer">Det var ett annat land.</div></div>
+      <div class="prophecy"><div class="says">Barnets bästa ska komma i främsta rummet.<a class="fn" href="#k13">13</a></div><div class="answer">Det har vägts in i beredningen.</div></div>
+      <div class="prophecy"><div class="says">Allt ovan går att ställa in i Google Admin på en eftermiddag, utan kostnad.<a class="fn" href="#k26">26</a></div><div class="answer">Vi behöver ett bredare beslutsunderlag.</div></div>
+    </div>
+    <p class="note">Profeternas ord är hämtade ur <a href="#kallor">Apokryferna</a>, med fullständiga källor. Objektets svar har hörts i många mötesrum.</p>
+  </div>
+</section>
+
+<section id="budorden">
   <div class="wrap">
     <div class="divider">✦ ✦ ✦</div>
     <h2>De tio budorden</h2>
@@ -339,7 +394,7 @@
       <li>Tänk på mötesdagen, så att du helgar den – och flyttar den.</li>
       <li>Du skall icke fråga eleverna.</li>
       <li>Du skall icke lyssna på föräldrarna.</li>
-      <li>Du skall icke läsa forskningen, ty den har icke beretts.</li>
+      <li><span>Du skall icke läsa forskningen, ty den har icke beretts.<a class="fn" href="#kallor">1–26</a></span></li>
       <li>Du skall icke säga ”jag”, utan ”vi har tagit upp det”.</li>
       <li>Du skall icke iterera, ty agilt är ett ord från Främlingarnas land.</li>
       <li>Du skall icke hava begär till din nästas behörighet.</li>
@@ -348,7 +403,7 @@
   </div>
 </section>
 
-<section id="saligprisningar">
+<section class="alt" id="saligprisningar">
   <div class="wrap">
     <div class="divider">✦ ✦ ✦</div>
     <h2>Saligprisningarna</h2>
@@ -358,12 +413,14 @@
       <p>Saliga äro de som aldrig frågade,<br><em>ty de fingo aldrig nej.</em></p>
       <p>Saliga äro de som hänvisa vidare,<br><em>ty de skola aldrig bära ansvar.</em></p>
       <p>Saliga äro de som sitta i rätt instans,<br><em>ty deras är behörigheten.</em></p>
+      <p>Saliga äro de som läst forskningen,<br><em>ty de skola icke bliva tröstade.</em></p>
+      <p>Saliga äro skattebetalarna,<br><em>ty de skola betala nästa Chromebook också.</em></p>
       <p>Saliga äro barnen som skrolla klockan tre om natten,<br><em>ty deras är… ja, det får tas upp i Objektet.</em></p>
     </div>
   </div>
 </section>
 
-<section class="alt" id="bon-fadervar">
+<section id="bon-fadervar">
   <div class="wrap">
     <div class="divider">✦ ✦ ✦</div>
     <h2>Herrens bön</h2>
@@ -377,7 +434,7 @@
   </div>
 </section>
 
-<section id="forsamlingsliv">
+<section class="alt" id="forsamlingsliv">
   <div class="wrap-wide">
     <div class="divider">✦ ✦ ✦</div>
     <h2>Församlingsliv</h2>
@@ -413,11 +470,16 @@
         <h3>Föräldramöte</h3>
         <p>Föräldrarnas synpunkter har tagits emot och lyfts till Objektet.</p>
       </div>
+      <div class="service">
+        <div class="when">Årligen, via skattsedeln</div>
+        <h3>Kollekt</h3>
+        <p>Går till nya Chromebooks som ersätter dem som gick sönder hemma, och till fler licenser. Givaren tillfrågas inte.</p>
+      </div>
     </div>
   </div>
 </section>
 
-<section class="alt" id="mirakel">
+<section id="mirakel">
   <div class="wrap-wide">
     <div class="divider">✦ ✦ ✦</div>
     <h2>Objektets under</h2>
@@ -427,64 +489,73 @@
       <div class="stat"><div class="num">0</div><div class="label">elever som har tillfrågats</div></div>
       <div class="stat"><div class="num">∞</div><div class="label">möten som har hållits</div></div>
       <div class="stat"><div class="num">1</div><div class="label">beslut som har fattats (utreds)</div></div>
+      <div class="stat"><div class="num">2×</div><div class="label">risk att sova för lite med skärm vid läggdags<a class="fn" href="#k6">6</a> (ej beredd)</div></div>
+      <div class="stat"><div class="num">−15</div><div class="label">poäng i matematik när andras skärmar stör<a class="fn" href="#k10">10</a> (noterat)</div></div>
+      <div class="stat"><div class="num">0</div><div class="label">poäng i genomsnitt från svenska 1:1-satsningar<a class="fn" href="#k4">4</a> (bekräftar satsningen)</div></div>
+      <div class="stat"><div class="num">26</div><div class="label">källor i Apokryferna<a class="fn" href="#kallor">1–26</a> (oprövade av Objektet)</div></div>
     </div>
   </div>
 </section>
 
-<section id="boneamnen">
+<section class="alt" id="boneamnen">
   <div class="wrap-wide">
     <div class="divider">✦ ✦ ✦</div>
     <h2>Församlingens böneämnen</h2>
-    <p class="sub">Ödmjuka böner som lagts fram för Objektet. Alla är tekniskt möjliga. Alla är gratis. Ingen är besvarad.</p>
+    <p class="sub">Ödmjuka böner som lagts fram för Objektet. Alla går att uppfylla på en eftermiddag. Alla är gratis. Ingen är besvarad.</p>
     <div class="petitions">
       <div class="petition">
         <h3>Om nattens frid</h3>
-        <p>Att elevernas Chromebooks får vila om natten, så att eleverna också får det.</p>
-        <ul>
-          <li>Google Admin → Enheter → Chrome → Inställningar → Enhetsinställningar → <code>Device restriction schedule</code>. Eventuella pågående sessioner avslutas och ingen kan logga in.</li>
-          <li>Lås tidszonen (<code>SystemTimezone</code>) så att schemat inte går att kringgå.</li>
-          <li>Aktivera <em>inte</em> <code>Device off hours</code>. Det öppnar för privata konton på kvällen.</li>
-        </ul>
+        <p>Att skolans datorer somnar klockan tio på kvällen och vaknar klockan sex på morgonen. Eleverna förväntas följa efter.</p>
+        <p class="prophets">Profeterna: <a href="#k6">Carter m.fl. 2016</a> · <a href="#k7">Folkhälsomyndigheten 2024</a></p>
         <span class="status">Lyft till Objektet</span>
       </div>
       <div class="petition">
         <h3>Om renhet i det som skådas</h3>
-        <p>Att YouTube på skolans dator visar det som skolan står för.</p>
-        <ul>
-          <li>Google Admin → Appar → YouTube → Behörigheter: <code>Strikt begränsad åtkomst</code> för elevenheten.</li>
-          <li>Chrome-policyn <code>ForceYouTubeRestrict</code> = Strikt. Begränsat läge går då inte att stänga av.</li>
-          <li><code>ForceGoogleSafeSearch</code> på all Google-sökning.</li>
-        </ul>
+        <p>Att YouTube på skolans dator visar det som skolan står för, och att en sökning inte leder dit ingen tolvåring borde hamna.</p>
+        <p class="prophets">Profeterna: <a href="#k13">Barnkonventionen art. 17</a> · <a href="#k17">Department for Education 2026</a> · <a href="#k19">CIPA</a></p>
         <span class="status">Bordlagd</span>
       </div>
       <div class="petition">
         <h3>Om ett skyddat förgårdsområde</h3>
-        <p>Att skolans dator inte är en portal till allt internet har att erbjuda.</p>
-        <ul>
-          <li><code>SafeSitesFilterBehavior</code>: filtrera vuxeninnehåll.</li>
-          <li><code>URLBlocklist</code> / <code>URLAllowlist</code> för spel, sociala medier och streaming.</li>
-          <li>Tillägg och appar: blockera allt, tillåt det undervisningen behöver.</li>
-          <li>Google Play / Android-appar: av, eller bara godkända appar.</li>
-        </ul>
+        <p>Att skolans dator är ett verktyg för skolarbete. Inte en spelkonsol, ett kasino och ett nöjesfält med en läxa i ett hörn.</p>
+        <p class="prophets">Profeterna: <a href="#k10">OECD 2024</a> · <a href="#k12">UNESCO 2023</a> · <a href="#k14">Skollagen 5:3</a></p>
         <span class="status">Hänvisad till annan instans</span>
       </div>
       <div class="petition">
         <h3>Om att inga smitvägar finnas</h3>
-        <p>Att reglerna ovan inte kan kringgås på fem minuter av en motiverad tolvåring.</p>
-        <ul>
-          <li><code>IncognitoModeAvailability</code>: inaktiverat.</li>
-          <li><code>DeveloperToolsAvailability</code>: inaktiverat.</li>
-          <li>Gästläge av, inloggning begränsad till skolans domän (<code>DeviceUserAllowlist</code>).</li>
-          <li><code>AllowDeletingBrowserHistory</code>: av.</li>
-          <li>Tvingad återregistrering vid återställning (Forced re-enrollment).</li>
-        </ul>
+        <p>Att reglerna inte kan kringgås på fem minuter av en motiverad tolvåring, och att någon ser efter att de fortfarande håller. En gång per läsår vore en början.</p>
+        <p class="prophets">Profeterna: <a href="#k15">Skolverket 2026</a> · <a href="#k16">Skolinspektionen 2025</a> · <a href="#k18">UK Safer Internet Centre</a> · <a href="#k1">Malamud &amp; Pop-Eleches 2011</a></p>
         <span class="status">Under beredning sedan läsåret 2020/21</span>
+      </div>
+      <div class="petition">
+        <h3>Om att barnen lära sig vandra själva</h3>
+        <p>Att eleverna också får lära sig varför. Inget filter håller för evigt, och tolvåringar blir femtonåringar.</p>
+        <p class="prophets">Profeterna: <a href="#k20">Przybylski &amp; Nash 2018</a> · <a href="#k19">CIPA</a> · <a href="#k15">Skolverket 2026</a></p>
+        <span class="status">Remitterad</span>
+      </div>
+      <div class="petition">
+        <h3>Om att barnens uppgifter förbliva barnens</h3>
+        <p>Att någon bedömer vad som händer med elevernas uppgifter innan datorerna delas ut, och inte efter att tillsynsmyndigheten har gjort det.</p>
+        <p class="prophets">Profeterna: <a href="#k21">IMY 2023</a> · <a href="#k22">Datatilsynet (DK)</a> · <a href="#k23">Datatilsynet (NO)</a> · <a href="#k24">ICO</a></p>
+        <span class="status">Inväntar sanktionsavgift</span>
+      </div>
+      <div class="petition">
+        <h3>Om föräldrarnas röst</h3>
+        <p>Att vårdnadshavare får veta vad datorn som kommer hem kan, vad den inte kan, och vem som har bestämt det.</p>
+        <p class="prophets">Profeterna: <a href="#k23">Datatilsynet (NO)</a> · <a href="#k7">Folkhälsomyndigheten 2024</a></p>
+        <span class="status">Synpunkterna har tagits emot</span>
+      </div>
+      <div class="petition">
+        <h3>Om ögonens ljus</h3>
+        <p>Att barnen då och då får titta på något som är längre bort än fyrtio centimeter.</p>
+        <p class="prophets">Profeterna: <a href="#k25">Foreman m.fl. 2021</a></p>
+        <span class="status">Ej prioriterad</span>
       </div>
     </div>
   </div>
 </section>
 
-<section id="butik">
+<section class="alt" id="butik">
   <div class="wrap-wide">
     <div class="divider">✦ ✦ ✦</div>
     <h2>Församlingsbutiken</h2>
@@ -493,7 +564,7 @@
   </div>
 </section>
 
-<section class="alt" id="bon">
+<section id="bon">
   <div class="wrap">
     <div class="divider">✦ ✦ ✦</div>
     <h2>Bönelådan</h2>
@@ -506,7 +577,7 @@
   </div>
 </section>
 
-<section id="kallor">
+<section class="alt" id="kallor">
   <div class="wrap">
     <div class="divider">✦ ✦ ✦</div>
     <h2>Apokryferna</h2>
@@ -514,40 +585,40 @@
     <div class="prose">
       <p>Under åren har en liten sekt av villolärare samlat sina skrifter. De har undersökt vad som händer när barn får en dator med sig hem utan regler. Deras slutsatser är så hädiska att de återges här ordagrant och med fullständiga källhänvisningar, så att den troende själv kan undvika dem.</p>
     </div>
-    <details class="apocrypha">
-      <summary>Öppna de förbjudna skrifterna</summary>
+    <details class="apocrypha" open>
+      <summary>De förbjudna skrifterna · klicka här för att blunda</summary>
 
       <h3 class="group">Om datorerna som sändes hem</h3>
       <ol class="sources">
-        <li>
+        <li id="k1">
           <div>
             <div class="ref-title"><a href="https://doi.org/10.1093/qje/qjr008" target="_blank" rel="noopener">Home Computer Use and the Development of Human Capital</a></div>
             <div class="ref-meta">Malamud &amp; Pop-Eleches · <em>Quarterly Journal of Economics</em> 126(2), 2011</div>
           </div>
           <div class="ref-quote">Barn som fick en dator hem fick <em>signifikant lägre skolbetyg</em>. Där föräldrarna satte regler för läxor och datoranvändning dämpades effekten. <span class="gloss">Regler hjälpte alltså. Objektet har noterat detta och valt att inte ha några.</span></div>
         </li>
-        <li>
+        <li id="k2">
           <div>
             <div class="ref-title"><a href="https://doi.org/10.1111/ecin.12089" target="_blank" rel="noopener">Scaling the Digital Divide: Home Computer Technology and Student Achievement</a></div>
             <div class="ref-meta">Vigdor, Ladd &amp; Martinez · <em>Economic Inquiry</em> 52(3), 2014</div>
           </div>
           <div class="ref-quote">Tillgång till dator och bredband i hemmet gav <em>lägre provresultat i matematik och läsning</em> och vidgade klyftorna mellan elevgrupper. Mest drabbades elever med sämre socioekonomiska förutsättningar.</div>
         </li>
-        <li>
+        <li id="k3">
           <div>
             <div class="ref-title"><a href="https://doi.org/10.1257/app.5.3.211" target="_blank" rel="noopener">Experimental Evidence on the Effects of Home Computers on Academic Achievement among Schoolchildren</a></div>
             <div class="ref-meta">Fairlie &amp; Robinson · <em>American Economic Journal: Applied Economics</em> 5(3), 2013</div>
           </div>
           <div class="ref-quote">Det största randomiserade fältexperimentet med gratis hemdatorer. Resultat: <em>ingen effekt</em> på betyg, provresultat, närvaro eller disciplin. <span class="gloss">Datorerna gjorde alltså exakt lika mycket nytta som Objektet.</span></div>
         </li>
-        <li>
+        <li id="k4">
           <div>
             <div class="ref-title"><a href="https://doi.org/10.1016/j.labeco.2020.101957" target="_blank" rel="noopener">A laptop for every child? The impact of technology on human capital formation</a></div>
             <div class="ref-meta">Hall, Lundin &amp; Sibbmark · <em>Labour Economics</em> 69, 2021 · IFAU, Uppsala</div>
           </div>
           <div class="ref-quote">Svensk forskning om svenska 1:1-satsningar. <em>Ingen genomsnittlig effekt</em> på provresultat. För elever med lågutbildade föräldrar blev matematiken sämre, och färre gick vidare till högskoleförberedande program. <span class="gloss">Skrifterna är dessutom författade på hemmaplan. Objektet läser inte svenska.</span></div>
         </li>
-        <li>
+        <li id="k5">
           <div>
             <div class="ref-title"><a href="https://www.sciencedirect.com/science/article/pii/S027277572400030X" target="_blank" rel="noopener">Technology in the classroom: Personal computers and learning outcomes in primary school</a></div>
             <div class="ref-meta">Hall &amp; Lundin · <em>Economics of Education Review</em> 100, 2024</div>
@@ -558,17 +629,17 @@
 
       <h3 class="group">Om nattens frid</h3>
       <ol class="sources">
-        <li>
+        <li id="k6">
           <div>
             <div class="ref-title"><a href="https://doi.org/10.1001/jamapediatrics.2016.2341" target="_blank" rel="noopener">Association Between Portable Screen-Based Media Device Access or Use and Sleep Outcomes</a></div>
             <div class="ref-meta">Carter m.fl. · <em>JAMA Pediatrics</em> 170(12), 2016 · metaanalys, 20 studier, 125 198 barn</div>
           </div>
           <div class="ref-quote">Barn som använder skärm före läggdags löper ungefär dubbelt så hög risk att sova för lite. Det räcker att enheten <em>finns i sovrummet</em>, även oanvänd, för att sömnen ska bli kortare och sämre och barnet tröttare under dagen. <span class="gloss">Datorn behöver inte ens vara på. Det räcker att Objektet har skickat hem den.</span></div>
         </li>
-        <li>
+        <li id="k7">
           <div>
             <div class="ref-title"><a href="https://www.folkhalsomyndigheten.se/livsvillkor-levnadsvanor/digitala-medier-och-halsa/rekommendationer-om-skarmanvandning-for-olika-aldrar/" target="_blank" rel="noopener">Rekommendationer om skärmanvändning för olika åldrar</a></div>
-            <div class="ref-meta">Folkhälsomyndigheten, september 2024</div>
+            <div class="ref-meta">Folkhälsomyndigheten och Mediemyndigheten, 2024 · <a href="https://mediemyndigheten.se/rapporter-och-analyser/digitala-medier-och-barns-och-ungas-halsa/" target="_blank" rel="noopener">kunskapssammanställningen</a></div>
           </div>
           <div class="ref-quote">Fritidsskärmtid högst 1–2 timmar per dag för 6–12 år och 2–3 timmar för 13–18 år. Inga skärmar före läggdags. Skärmar ska vara <em>utanför sovrummet på natten</em>.</div>
         </li>
@@ -576,35 +647,35 @@
 
       <h3 class="group">Om läsning och lärande</h3>
       <ol class="sources">
-        <li>
+        <li id="k8">
           <div>
             <div class="ref-title"><a href="https://doi.org/10.1016/j.edurev.2018.09.003" target="_blank" rel="noopener">Don’t throw away your printed books: A meta-analysis on the effects of reading media on reading comprehension</a></div>
             <div class="ref-meta">Delgado m.fl. · <em>Educational Research Review</em> 25, 2018 · 54 studier, över 170 000 deltagare</div>
           </div>
           <div class="ref-quote">Läsförståelsen är bättre på papper än på skärm för sakprosa, alltså <em>just den typ av text som skolan använder</em>.</div>
         </li>
-        <li>
+        <li id="k9">
           <div>
             <div class="ref-title"><a href="https://doi.org/10.3102/0034654321998074" target="_blank" rel="noopener">A Comparison of Children’s Reading on Paper Versus Screen: A Meta-Analysis</a></div>
             <div class="ref-meta">Furenes, Kucirkova &amp; Bus · <em>Review of Educational Research</em> 91(4), 2021</div>
           </div>
           <div class="ref-quote">Barn förstår texten bättre när de läser på papper än på skärm.</div>
         </li>
-        <li>
+        <li id="k10">
           <div>
-            <div class="ref-title"><a href="https://www.oecd.org/en/publications/pisa-2022-results-volume-ii_a97db61c-en.html" target="_blank" rel="noopener">PISA 2022 Results (Volume II)</a> · <a href="https://www.oecd.org/content/dam/oecd/en/publications/reports/2024/05/managing-screen-time_023f2390/7c225af4-en.pdf" target="_blank" rel="noopener">Managing screen time</a></div>
+            <div class="ref-title"><a href="https://www.oecd.org/en/publications/pisa-2022-results-volume-ii_a97db61c-en.html" target="_blank" rel="noopener">PISA 2022 Results (Volume II)</a> · <a href="https://www.oecd.org/content/dam/oecd/en/publications/reports/2024/05/managing-screen-time_023f2390/7c225af4-en.pdf" target="_blank" rel="noopener">Managing screen time</a> · <a href="https://www.oecd.org/content/dam/oecd/en/publications/reports/2024/05/students-digital-devices-and-success_621829ff/9e4c0624-en.pdf" target="_blank" rel="noopener">Students, digital devices and success</a></div>
             <div class="ref-meta">OECD, 2023 och 2024</div>
           </div>
-          <div class="ref-quote">Elever som störs av andras digitala enheter på lektionerna får <em>15 poäng lägre</em> i matematik, efter justering för socioekonomisk bakgrund.</div>
+          <div class="ref-quote">Elever som störs av andras digitala enheter på lektionerna får <em>15 poäng lägre</em> i matematik, efter justering för socioekonomisk bakgrund. 59 procent av eleverna störs av andras enheter på åtminstone vissa mattelektioner.</div>
         </li>
-        <li>
+        <li id="k11">
           <div>
             <div class="ref-title"><a href="https://www.regeringen.se/contentassets/d818e658071b49cbb1a75a6b11fa725d/karolinskainstitutet.pdf" target="_blank" rel="noopener">Yttrande över förslag till nationell digitaliseringsstrategi för skolväsendet 2023–2027</a></div>
             <div class="ref-meta">Karolinska Institutet, 2023 (dnr 1-322/2023)</div>
           </div>
           <div class="ref-quote">Påstådda positiva effekter av digitaliseringen saknar vetenskapligt stöd. Forskningen pekar i stället på <em>betydande negativa konsekvenser för kunskapsinhämtningen</em>. <span class="gloss">Remissvaret har tagits emot och lyfts till Objektet.</span></div>
         </li>
-        <li>
+        <li id="k12">
           <div>
             <div class="ref-title"><a href="https://www.unesco.org/en/articles/global-education-monitoring-report-2023-technology-education-tool-whose-terms" target="_blank" rel="noopener">Technology in education: A tool on whose terms?</a></div>
             <div class="ref-meta">UNESCO, Global Education Monitoring Report 2023</div>
@@ -615,14 +686,14 @@
 
       <h3 class="group">Lag och förordning</h3>
       <ol class="sources">
-        <li>
+        <li id="k13">
           <div>
             <div class="ref-title"><a href="https://www.riksdagen.se/sv/dokument-och-lagar/dokument/svensk-forfattningssamling/lag-20181197-om-forenta-nationernas-konvention_sfs-2018-1197/" target="_blank" rel="noopener">Lag (2018:1197) om FN:s konvention om barnets rättigheter</a></div>
             <div class="ref-meta">Svensk lag sedan 2020</div>
           </div>
           <div class="ref-quote">Art. 3: Vid alla åtgärder som rör barn ska <em>barnets bästa</em> komma i främsta rummet. Art. 17: Barnet ska skyddas mot material som skadar dess välfärd. <span class="gloss">Objektet står dock över lagen, som bekant.</span></div>
         </li>
-        <li>
+        <li id="k14">
           <div>
             <div class="ref-title"><a href="https://www.riksdagen.se/sv/dokument-och-lagar/dokument/svensk-forfattningssamling/skollag-2010800_sfs-2010-800/" target="_blank" rel="noopener">Skollag (2010:800), 5 kap. 3 §</a></div>
             <div class="ref-meta">Riksdagen</div>
@@ -631,14 +702,103 @@
         </li>
       </ol>
 
+      <h3 class="group">Om hur skolans datorer bör ställas in</h3>
+      <ol class="sources">
+        <li id="k15">
+          <div>
+            <div class="ref-title"><a href="https://www.skolverket.se/download/18.4d3280a019c933afee341b45/1772805053999/pdf13385.pdf" target="_blank" rel="noopener">Elevers digitala liv – i och utanför skolan</a></div>
+            <div class="ref-meta">Skolverket, rapport 2026:3 · slutredovisning av regeringsuppdrag U2024/01728</div>
+          </div>
+          <div class="ref-quote">Filter och spärrar på skolans datorer räcker inte. Eleverna hittar vägar runt dem, och sätten sprids snabbt. <em>De flesta lärare vet inte vilka filter som finns.</em> <span class="gloss">Inte heller Objektet. Det är dock inte Objektets mandat att veta.</span></div>
+        </li>
+        <li id="k16">
+          <div>
+            <div class="ref-title"><a href="https://www.skolinspektionen.se/beslut-rapporter/publikationer/ovriga-publikationer/2025/anvandning-av-mobiltelefoner/" target="_blank" rel="noopener">Användning av mobiltelefoner och annan elektronisk kommunikationsutrustning i undervisningen</a></div>
+            <div class="ref-meta">Skolinspektionen, 2025 (dnr 2024:6721) · 60 skolor, årskurs 7–9</div>
+          </div>
+          <div class="ref-quote">På 22 av 60 skolor använde elever digitala enheter otillåtet under lektionstid. På 29 brast rutinerna för att samla in enheterna. <em>Bara enstaka skolor</em> hade tekniska lösningar som begränsar skolans egna enheter.</div>
+        </li>
+        <li id="k17">
+          <div>
+            <div class="ref-title"><a href="https://www.gov.uk/guidance/meeting-digital-and-technology-standards-in-schools-and-colleges/filtering-and-monitoring-standards-for-schools-and-colleges" target="_blank" rel="noopener">Filtering and monitoring standards for schools and colleges</a></div>
+            <div class="ref-meta">Department for Education (Storbritannien), 2026 · kopplad till <a href="https://www.gov.uk/government/publications/keeping-children-safe-in-education--2" target="_blank" rel="noopener">Keeping children safe in education</a></div>
+          </div>
+          <div class="ref-quote">Skolan ska utse ansvariga, se över filtreringen minst en gång per år, blockera skadligt innehåll utan att hindra undervisningen och kontrollera att det inte går att kringgå. Filtret ska gälla <em>alla skolans enheter, även dem som tas med hem</em>. <span class="gloss">Utse ansvariga. Ett främmande begrepp.</span></div>
+        </li>
+        <li id="k18">
+          <div>
+            <div class="ref-title"><a href="https://saferinternet.org.uk/guide-and-resource/teachers-and-school-staff/appropriate-filtering-and-monitoring/appropriate-filtering" target="_blank" rel="noopener">Appropriate Filtering for Education Settings</a></div>
+            <div class="ref-meta">UK Safer Internet Centre, 2026</div>
+          </div>
+          <div class="ref-quote">Vilket innehåll som ska blockeras, att VPN, proxy och andra smitvägar ska hanteras, att SafeSearch ska kunna tvingas fram, och att skolans enheter <em>ska filtreras även hemma</em>. Varnar också för överblockering: inget filter är hundraprocentigt.</div>
+        </li>
+        <li id="k19">
+          <div>
+            <div class="ref-title"><a href="https://www.law.cornell.edu/cfr/text/47/54.520" target="_blank" rel="noopener">Children’s Internet Protection Act, 47 CFR § 54.520</a></div>
+            <div class="ref-meta">FCC (USA), lag sedan 2000</div>
+          </div>
+          <div class="ref-quote">Amerikanska skolor som vill ha statligt stöd måste ha tekniskt filter, övervakning av minderårigas aktivitet och <em>undervisning om hur man beter sig på nätet</em>, inklusive nätmobbning. <span class="gloss">I USA är det alltså lag sedan år 2000. Här är det ett ärende.</span></div>
+        </li>
+        <li id="k20">
+          <div>
+            <div class="ref-title"><a href="https://doi.org/10.1089/cyber.2017.0466" target="_blank" rel="noopener">Internet Filtering and Adolescent Exposure to Online Sexual Material</a></div>
+            <div class="ref-meta">Przybylski &amp; Nash · <em>Cyberpsychology, Behavior, and Social Networking</em>, 2018</div>
+          </div>
+          <div class="ref-quote">Filter i hemmet gav små och osäkra skyddseffekter. Slutsatsen är inte att man slutar filtrera, utan att <em>filter inte kan stå ensamma</em>. De behöver vuxna och undervisning bredvid sig.</div>
+        </li>
+      </ol>
+
+      <h3 class="group">Om barnens uppgifter</h3>
+      <ol class="sources">
+        <li id="k21">
+          <div>
+            <div class="ref-title"><a href="https://www.imy.se/nyheter/sanktionsavgift-mot-kommun-som-inte-bedomt-konsekvenser-innan-google-workspace-infordes/" target="_blank" rel="noopener">Sanktionsavgift mot kommun som inte bedömt konsekvenser innan Google Workspace infördes</a></div>
+            <div class="ref-meta">Integritetsskyddsmyndigheten, 2023</div>
+          </div>
+          <div class="ref-quote">En svensk kommun fick betala 300 000 kronor. Den hade infört Google Workspace för cirka 6 000 elever <em>utan att först bedöma riskerna</em>.</div>
+        </li>
+        <li id="k22">
+          <div>
+            <div class="ref-title"><a href="https://www.datatilsynet.dk/afgoerelser/afgoerelser/2022/jul/datatilsynet-nedlaegger-behandlingsforbud-i-chromebook-sag-" target="_blank" rel="noopener">Datatilsynet nedlægger behandlingsforbud i Chromebook-sag</a> · <a href="https://www.datatilsynet.dk/afgoerelser/afgoerelser/2024/jan/datatilsynet-giver-paabud-i-chromebook-sag" target="_blank" rel="noopener">Datatilsynet giver påbud i Chromebook-sag</a></div>
+            <div class="ref-meta">Datatilsynet (Danmark), 2022 och 2024</div>
+          </div>
+          <div class="ref-quote">Först förbjöds en kommun att använda Chromebooks. Sedan beordrades 53 kommuner att sluta låta elevernas uppgifter användas för <em>Googles egna syften</em>.</div>
+        </li>
+        <li id="k23">
+          <div>
+            <div class="ref-title"><a href="https://www.datatilsynet.no/personvern-pa-ulike-omrader/skole-barn-unge/bruk-av-google-chromebook-og-g-suite-for-education-og-andre-skytjenester-i-grunnskolen/" target="_blank" rel="noopener">Bruk av skytjenester i skolen</a></div>
+            <div class="ref-meta">Datatilsynet (Norge), 2024</div>
+          </div>
+          <div class="ref-quote">Vägledning om Chromebooks i grundskolan: riskbedömning, säkra inställningar från början och <em>information till elever och vårdnadshavare</em>.</div>
+        </li>
+        <li id="k24">
+          <div>
+            <div class="ref-title"><a href="https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/childrens-information/childrens-code-guidance-and-resources/age-appropriate-design-a-code-of-practice-for-online-services/" target="_blank" rel="noopener">Age appropriate design: a code of practice for online services</a></div>
+            <div class="ref-meta">Information Commissioner’s Office (Storbritannien), 2020</div>
+          </div>
+          <div class="ref-quote">Tjänster för barn ska ha <em>hög integritet som standardinställning</em>: positionsdelning av, ingen profilering och inga knep som lockar barn att stanna kvar.</div>
+        </li>
+      </ol>
+
+      <h3 class="group">Om ögonens ljus</h3>
+      <ol class="sources">
+        <li id="k25">
+          <div>
+            <div class="ref-title"><a href="https://doi.org/10.1016/S2589-7500(21)00135-7" target="_blank" rel="noopener">Association between digital smart device use and myopia: a systematic review and meta-analysis</a></div>
+            <div class="ref-meta">Foreman m.fl. · <em>The Lancet Digital Health</em>, 2021</div>
+          </div>
+          <div class="ref-quote">Skärmtid hänger ihop med <em>ökad risk för närsynthet</em>. Sambandet blir starkare när smarta enheter kombineras med dator. <span class="gloss">Objektet har inga ögon och berörs inte.</span></div>
+        </li>
+      </ol>
+
       <h3 class="group">Tillverkarens egen bruksanvisning</h3>
       <ol class="sources">
-        <li>
+        <li id="k26">
           <div>
-            <div class="ref-title"><a href="https://support.google.com/chrome/a/answer/1375678?hl=sv" target="_blank" rel="noopener">Ange enhetspolicyer för ChromeOS</a> · <a href="https://knowledge.workspace.google.com/admin/youtube/control-youtube-content-available-to-users" target="_blank" rel="noopener">Styra YouTube-innehåll</a> · <a href="https://chromeenterprise.google/policies/force-you-tube-restrict/" target="_blank" rel="noopener">ForceYouTubeRestrict</a></div>
+            <div class="ref-title"><a href="https://support.google.com/chrome/a/answer/1375678?hl=sv" target="_blank" rel="noopener">Ange enhetspolicyer för ChromeOS</a> · <a href="https://knowledge.workspace.google.com/admin/youtube/control-youtube-content-available-to-users" target="_blank" rel="noopener">Styra YouTube-innehåll</a> · <a href="https://chromeenterprise.google/policies/force-you-tube-restrict/" target="_blank" rel="noopener">ForceYouTubeRestrict</a> · <a href="https://services.google.com/fh/files/misc/k12cybersecurityguide.pdf" target="_blank" rel="noopener">K-12 Cybersecurity Guidebook</a></div>
             <div class="ref-meta">Google, Chrome Enterprise and Education Help</div>
           </div>
-          <div class="ref-quote">Här beskriver Google hur allt under <em>Församlingens böneämnen</em> ställs in. Uppskattad tid: en eftermiddag. Uppskattad handläggningstid i Objektet: okänd.</div>
+          <div class="ref-quote">Här beskriver Google hur allt under <em>Församlingens böneämnen</em> ställs in. Google rekommenderar själv att gästläge och inkognitoläge stängs av så att eleverna inte kan kringgå filtren. Uppskattad tid: en eftermiddag. Uppskattad handläggningstid i Objektet: okänd.</div>
         </li>
       </ol>
     </details>
@@ -649,7 +809,7 @@
 <footer>
   <span class="brand">OBJEKTET</span>
   Det som var, det som är, och det som skall beredas.
-  <p class="disclaimer">Objektet.se är satir. Ingen organisation, myndighet eller person står bakom sidan, och ingen myndighet har heller tillfrågats – vilket ju är själva poängen. Inga uppgifter från bönelådan skickas någonstans. Precis som i verkligheten.</p>
+  <p class="disclaimer">Objektet.se är satir. Forskningen är det inte. Ingen organisation, myndighet eller person står bakom sidan, och ingen myndighet har heller tillfrågats – vilket ju är själva poängen. Inga uppgifter från bönelådan skickas någonstans. Precis som i verkligheten.</p>
 </footer>
 
 <div class="modal-bg" id="modal">
@@ -674,6 +834,8 @@
     "Objektet ser dig. Objektet hör dig inte.",
     "Saliga äro de som väntar",
     "Ärendet förgås aldrig – det bereds",
+    "Jag läste forskningen och allt jag fick var ett ärendenummer",
+    "Skattebetalare för Objektet",
   ];
 
   const REPLIES = [
@@ -727,6 +889,9 @@
     e.target.reset();
     openModal(["Din bön har registrerats", "Den har lyfts till Objektet. Handläggningstid: evig. Du kommer inte att få någon återkoppling."]);
   });
+
+  document.querySelectorAll('a[href^="#k"]').forEach((a) =>
+    a.addEventListener("click", () => { document.querySelector(".apocrypha").open = true; }));
 
   document.getElementById("modal-close").addEventListener("click", () => document.getElementById("modal").classList.remove("open"));
 
